@@ -1,4 +1,6 @@
 import React, { Component, Fragment } from 'react';
+import { Switch, Route } from 'react-router-dom';
+
 import './App.css';
 import Navbar from './components/Navbar';
 import ProductList from './components/ProductList';
@@ -11,10 +13,12 @@ class App extends Component {
     return (
       <Fragment>
         <Navbar />
-        <ProductList />
-        <Details />
-        <Cart />
-        <PageNotFound />
+        <Switch>
+          <Route exact path="/" component={ProductList} />
+          <Route path="/details" component={Details} />
+          <Route path="/cart" component={Cart} />
+          <Route component={PageNotFound} />
+        </Switch>
       </Fragment>
     );
   }
