@@ -1,17 +1,21 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import './App.css';
+import Navbar from './components/Navbar';
+import ProductList from './components/ProductList';
+import Details from './components/Details';
+import Cart from './components/Cart';
+import PageNotFound from './components/PageNotFound';
 
 class App extends Component {
   render() {
     return (
-      <div className="container">
-        <div className="row">
-          <div className="col">Column one</div>
-          <div className="col">
-            <i className="fas fa-home" />
-          </div>
-        </div>
-      </div>
+      <Fragment>
+        <Navbar />
+        <ProductList />
+        <Details />
+        <Cart />
+        <PageNotFound />
+      </Fragment>
     );
   }
 }
