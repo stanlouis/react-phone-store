@@ -8,10 +8,19 @@
 }
 
 body {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   background: var(--mainWhite);
   color: var(--mainDark);
 }
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'EconomicaBold', sans-serif;
+}
+
 .text-title {
   font-family: 'Permanent Marker', cursive;
   letter-spacing: 0.3rem;
