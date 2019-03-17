@@ -9,12 +9,12 @@ class ProductProvider extends Component {
     detailProduct,
   };
 
-  handleDetail = params => {
+  handleDetail = id => {
     console.log('detail from context');
   };
 
-  addToCart = params => {
-    console.log('addToCart from context');
+  addToCart = id => {
+    console.log('addToCart', id);
   };
 
   // copy data in context by value and not by object reference keeping values in data.js fresh
