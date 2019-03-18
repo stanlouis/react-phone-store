@@ -9,8 +9,13 @@ class ProductProvider extends Component {
     detailProduct,
   };
 
+  getItemById = id => this.state.products.find(item => item.id === id);
+
   handleDetail = id => {
-    console.log('detail from context');
+    const product = this.getItemById(id);
+    this.setState(() => {
+      return { detailProduct: product };
+    });
   };
 
   addToCart = id => {
