@@ -7,6 +7,7 @@ class ProductProvider extends Component {
   state = {
     products: [],
     detailProduct,
+    cart: [],
   };
 
   getItemById = id => this.state.products.find(item => item.id === id);
@@ -19,7 +20,18 @@ class ProductProvider extends Component {
   };
 
   addToCart = id => {
-    console.log('addToCart', id);
+    let tempProducts = [...this.state.products];
+    const index = tempProducts.indexOf(this.getItemById(id));
+    const product = tempProducts[index];
+    product.inCart = true;
+    product.count = 1;
+    product.total = product.price;
+    this.setState(
+      () => {
+        return { products: tempProducts, cart: [...this.state.cart, product] };
+      },
+      () => console.log(this.state)
+    );
   };
 
   // copy data in context by value and not by object reference keeping values in data.js fresh
