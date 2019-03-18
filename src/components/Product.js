@@ -31,7 +31,10 @@ class Product extends Component {
                 <button
                   className="cart-btn"
                   disabled={inCart}
-                  onClick={() => value.addToCart(id)}
+                  onClick={() => {
+                    value.addToCart(id);
+                    value.openModal(id);
+                  }}
                 >
                   {this.inCartBtnDisplay(inCart)}
                 </button>

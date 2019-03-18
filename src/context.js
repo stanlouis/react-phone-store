@@ -8,6 +8,8 @@ class ProductProvider extends Component {
     products: [],
     detailProduct,
     cart: [],
+    modalOpen: false,
+    modalProduct: detailProduct,
   };
 
   getItemById = id => this.state.products.find(item => item.id === id);
@@ -34,6 +36,18 @@ class ProductProvider extends Component {
     );
   };
 
+  openModal = id => {
+    const product = this.getItemById(id);
+    this.setState(() => {
+      return { modalProduct: product, modalOpen: true };
+    });
+  };
+
+  closeModal = () => {
+    this.setState(() => {
+      return { modalOpen: false };
+    });
+  };
   // copy data in context by value and not by object reference keeping values in data.js fresh
   setProducts = () => {
     let tempProducts = [];
@@ -57,6 +71,8 @@ class ProductProvider extends Component {
           ...this.state,
           handleDetail: this.handleDetail,
           addToCart: this.addToCart,
+          openModal: this.openModal,
+          closeModal: this.closeModal,
         }}
       >
         {this.props.children}
