@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { ProductConsumer } from "../context";
+
 class Product extends Component {
   inCartBtnDisplay = inCart => {
     return inCart ? (

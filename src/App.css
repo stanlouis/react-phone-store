@@ -3,7 +3,6 @@
   --lightBlue: #009ffd;
   --mainWhite: #f3f3f3;
   --mainDark: #232528;
-  --mainDark: #000;
   --mainYellow: #ffa400;
 }
 
@@ -39,7 +38,7 @@ h5 {
   background: transparent;
   text-transform: capitalize;
   font-size: 0.8rem !important;
-  color: var(--mainBlack);
+  color: var(--mainDark);
   border-radius: 0 !important;
   border: 0.1rem solid var(--mainDark) !important;
 }
