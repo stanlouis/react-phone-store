@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
-import { ProductConsumer } from '../context';
-import { ButtonContainer } from './Button';
+import { ProductConsumer } from "../context";
+import { ButtonContainer } from "./Button";
 class Details extends Component {
   render() {
     return (
@@ -15,7 +15,7 @@ class Details extends Component {
             info,
             price,
             title,
-            inCart,
+            inCart
           } = value.detailProduct;
 
           return (
@@ -54,13 +54,13 @@ class Details extends Component {
                     </Link>
                     <ButtonContainer
                       cart
-                      disabled={inCart ? true : false}
+                      disabled={inCart}
                       onClick={() => {
                         value.addToCart(id);
                         value.openModal(id);
                       }}
                     >
-                      {inCart ? 'inCart' : 'add to cart'}
+                      {inCart ? "inCart" : "add to cart"}
                     </ButtonContainer>
                   </div>
                 </div>

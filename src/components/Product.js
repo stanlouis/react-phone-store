@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import { ProductConsumer } from '../context';
+import React, { Component } from "react";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+import { ProductConsumer } from "../context";
 class Product extends Component {
   inCartBtnDisplay = inCart => {
     return inCart ? (
@@ -60,8 +60,8 @@ Product.propTypes = {
     img: PropTypes.string,
     price: PropTypes.number,
     title: PropTypes.string,
-    inCart: PropTypes.bool,
-  }).isRequired,
+    inCart: PropTypes.bool
+  }).isRequired
 };
 
 const ProductWrapper = styled.div`
