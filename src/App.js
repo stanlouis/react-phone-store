@@ -6,7 +6,7 @@ import Navbar from "./components/Navbar";
 import ProductList from "./components/ProductList";
 import Details from "./components/Details";
 import Cart from "./components/cart";
-import PageNotFound from "./components/PageNotFound";
+import PageNotFound from "./components/404";
 import Modal from "./components/Modal";
 
 class App extends Component {
