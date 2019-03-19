@@ -1,13 +1,13 @@
-import React, { Component, Fragment } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import React, { Component, Fragment } from "react";
+import { Switch, Route } from "react-router-dom";
 
-import './App.css';
-import Navbar from './components/Navbar';
-import ProductList from './components/ProductList';
-import Details from './components/Details';
-import Cart from './components/Cart';
-import PageNotFound from './components/PageNotFound';
-import Modal from './components/Modal';
+import "./App.css";
+import Navbar from "./components/Navbar";
+import ProductList from "./components/ProductList";
+import Details from "./components/Details";
+import Cart from "./components/cart";
+import PageNotFound from "./components/PageNotFound";
+import Modal from "./components/Modal";
 
 class App extends Component {
   render() {

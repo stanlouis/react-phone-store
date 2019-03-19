@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { storeProducts, detailProduct } from './data';
+import React, { Component } from "react";
+import { storeProducts, detailProduct } from "./data";
 
 const ProductContext = React.createContext();
 //Provider
@@ -10,6 +10,9 @@ class ProductProvider extends Component {
     cart: [],
     modalOpen: false,
     modalProduct: detailProduct,
+    cartSubTotal: 0,
+    cartTax: 0,
+    cartTotal: 0
   };
 
   getItemById = id => this.state.products.find(item => item.id === id);
@@ -20,6 +23,14 @@ class ProductProvider extends Component {
       return { detailProduct: product };
     });
   };
+
+  increment = id => console.log("Increment method", id);
+
+  decrement = id => console.log("Decrement method", id);
+
+  removeItem = id => console.log("Remove item method", id);
+
+  clearCart = () => console.log("Clear cart method");
 
   addToCart = id => {
     let tempProducts = [...this.state.products];
@@ -56,7 +67,7 @@ class ProductProvider extends Component {
       tempProducts = [...tempProducts, singleItem];
     });
     this.setState(() => ({
-      products: tempProducts,
+      products: tempProducts
     }));
   };
 
@@ -73,6 +84,10 @@ class ProductProvider extends Component {
           addToCart: this.addToCart,
           openModal: this.openModal,
           closeModal: this.closeModal,
+          increment: this.increment,
+          decrement: this.decrement,
+          removeItem: this.removeItem,
+          clearCart: this.clearCart
         }}
       >
         {this.props.children}
